@@ -1,0 +1,29 @@
+{
+  "name": "dao-snapshot-vote-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justgnoh/DAO-Snapshot-Vote-Checker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justgnoh/DAO-Snapshot-Vote-Checker/issues"
+  },
+  "homepage": "https://github.com/justgnoh/DAO-Snapshot-Vote-Checker#readme",
+  "dependencies": {
+    "@cubejs-client/core": "^0.31.0",
+    "axios": "^1.5.1",
+    "chart.js": "^4.4.0",
+    "chartjs-plugin-annotation": "^3.0.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  }
+}
