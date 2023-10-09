@@ -2,16 +2,16 @@
   "name": "dao-snapshot-vote-checker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/justgnoh/DAO-Snapshot-Vote-Checker.git"
   },
-  "author": "",
+  "author": "Justin Gnoh @justgnoh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/justgnoh/DAO-Snapshot-Vote-Checker/issues"
