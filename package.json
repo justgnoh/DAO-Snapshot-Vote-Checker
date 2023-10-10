@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --no-cache --public-url ./",
+    "build": "parcel build src/index.html --public-url ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +16,6 @@
   "bugs": {
     "url": "https://github.com/justgnoh/DAO-Snapshot-Vote-Checker/issues"
   },
-  "homepage": "https://github.com/justgnoh/DAO-Snapshot-Vote-Checker#readme",
   "dependencies": {
     "@cubejs-client/core": "^0.31.0",
     "axios": "^1.5.1",
