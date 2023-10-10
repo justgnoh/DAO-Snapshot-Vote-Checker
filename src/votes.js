@@ -1,4 +1,4 @@
-import {Chart} from 'chart.js/auto'
+import Chart from 'chart.js/auto'
 import annotationPlugin from 'chartjs-plugin-annotation';
 import axios from 'axios';
 
