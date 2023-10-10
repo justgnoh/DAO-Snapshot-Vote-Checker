@@ -24,13 +24,11 @@
     "chartjs-plugin-annotation": "^3.0.1"
   },
   "devDependencies": {
-    "buffer": "^6.0.3",
     "parcel": "^2.9.3"
   },
   "targets": {
     "main": {
       "includeNodeModules": {
-        "chartjs-plugin-annotation": true,
         "buffer": false
       }
     }
