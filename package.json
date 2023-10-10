@@ -24,7 +24,6 @@
     "chartjs-plugin-annotation": "^3.0.1"
   },
   "devDependencies": {
-    "buffer": "^6.0.3",
     "parcel": "^2.6.2"
   },
   "@parcel/resolver-default": {
