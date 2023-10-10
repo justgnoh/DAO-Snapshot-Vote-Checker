@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const subgraph = "https://hub.snapshot.org/graphql";
 
-export function descVotes(array,key) {
+function descVotes(array,key) {
     return array.sort((a,b) => {
         let x = a[key][0];
         let y = b[key][0];
@@ -11,7 +11,7 @@ export function descVotes(array,key) {
     })
 }
 
-export async function main() {
+async function main() {
     const queryProposal = await axios.post(subgraph, {
         query: `
         {
