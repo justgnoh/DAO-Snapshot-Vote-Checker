@@ -27,5 +27,10 @@
     "buffer": "^6.0.3",
     "parcel": "^2.6.2"
   },
-  "type": "module"
+  "type": "module",
+  "targets": {
+    "main": {
+      "includeNodeModules": true
+    }
+  }
 }
