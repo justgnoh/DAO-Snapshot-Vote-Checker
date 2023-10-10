@@ -30,7 +30,7 @@
   "targets": {
     "main": {
       "includeNodeModules": {
-        "buffer": true
+        "chartjs-plugin-annotation": true
       }
     }
   }

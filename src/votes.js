@@ -61,11 +61,10 @@ async function main() {
     return sorted_filtered;
 }
 
-Chart.register(annotationPlugin);
-
 
 (async function() {
-
+    Chart.register(annotationPlugin);
+    
     let queryData = await main();
 
     new Chart(
