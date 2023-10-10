@@ -1,6 +1,8 @@
 import Chart from 'chart.js/auto'
 import annotationPlugin from 'chartjs-plugin-annotation';
 import axios from 'axios';
+import { Buffer } from 'buffer';
+global.Buffer = Buffer;
 
 const subgraph = "https://hub.snapshot.org/graphql";
 
@@ -64,7 +66,7 @@ async function main() {
 
 (async function() {
     Chart.register(annotationPlugin);
-    
+
     let queryData = await main();
 
     new Chart(
