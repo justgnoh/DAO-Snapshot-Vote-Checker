@@ -1,6 +1,8 @@
-import Chart from 'chart.js/auto'
-import annotationPlugin from 'chartjs-plugin-annotation';
+import { useEffect, useRef, useState } from "react";
+import { Chart } from "chart.js/auto";
 import axios from 'axios';
+import annotationPlugin from 'chartjs-plugin-annotation';
+
 
 const subgraph = "https://hub.snapshot.org/graphql";
 
@@ -61,34 +63,39 @@ async function main() {
     return sorted_filtered;
 }
 
+function Example() {
+  const chartRef = useRef(null);
+  useEffect(() => {
+    main().then((data) => {      
+        Chart.register(annotationPlugin);
+        const ctx = chartRef.current.getContext('2d');
 
-(async function() {
-    Chart.register(annotationPlugin);
+        // Destroy any existing chart
+        const existingChart = Chart.getChart(ctx);
+        if (existingChart) {
+          existingChart.destroy();
+        }
 
-    let queryData = await main();
-
-    new Chart(
-        document.getElementById('votes'),
-        {
+        const myChart = new Chart(ctx, {
             type:'bar',
             data: {
-                labels: queryData.map(row => row.title),
+                labels: data.map(row => row.title),
                 datasets: [
                     {
                         label: 'For',
-                        data: queryData.map(row => row.scores[0]),
+                        data: data.map(row => row.scores[0]),
                         barThickness: 5,
                         categoryPercentage: 0.5,
                         barPercentage: 0.3,
                     },
                     {
                         label: 'Against',
-                        data: queryData.map(row => row.scores[1]),
+                        data: data.map(row => row.scores[1]),
                         barThickness: 5,
                     },
                     {
                         label: 'Abstain',
-                        data: queryData.map(row => row.scores[2]),
+                        data: data.map(row => row.scores[2]),
                         barThickness: 5
                     }
                 ]
@@ -111,7 +118,7 @@ async function main() {
                 scales: {
                     y: {
                         ticks: {
-                            source: queryData,
+                            source: data,
                             autoSkip: false,
                             color: function(context) {
                                 if (context.tick.label.includes("Range Protocol")) {
@@ -121,7 +128,24 @@ async function main() {
                         },
                     }
                 }
-            }
-        }
-    )
-})();
+            },
+        });
+
+        return () => {
+            myChart.destroy();
+        };
+    });
+  }, []);
+
+  return (
+    <div>
+      {/* line chart */}
+      <h1 className="w-[110px] mx-auto mt-10 text-xl font-semibold capitalize ">DAO Snapshot Checker</h1>
+      <div style={{ width: '100%', height: '140vh' }}>
+        <canvas ref={chartRef}></canvas>
+      </div>
+    </div>
+  );
+}
+
+export default Example;

@@ -1,35 +1,19 @@
 {
-  "name": "dao-snapshot-vote-checker",
-  "version": "1.0.0",
-  "description": "",
+  "name": "dao-snapshot-checker",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url ./",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/justgnoh/DAO-Snapshot-Vote-Checker.git"
-  },
-  "author": "Justin Gnoh @justgnoh",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/justgnoh/DAO-Snapshot-Vote-Checker/issues"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@cubejs-client/core": "^0.31.0",
     "axios": "^1.5.1",
     "chart.js": "^4.4.0",
-    "chartjs-plugin-annotation": "^3.0.1"
-  },
-  "devDependencies": {
-    "parcel": "^2.9.3"
-  },
-  "targets": {
-    "main": {
-      "includeNodeModules": {
-        "buffer": false
-      }
-    }
+    "chartjs-plugin-annotation": "^3.0.1",
+    "next": "13.5.4",
+    "react": "^18",
+    "react-dom": "^18"
   }
 }
